@@ -1,0 +1,80 @@
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <style type="text/css">
+  table{
+    border: 1px solid white;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+
+  </style>
+  <script>
+
+function printError(elemId, hintMsg){
+  document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function validateForm(){
+   var source = document.contactForm.source.value;
+
+var sourceErr = true;
+
+if(source == ""){
+  printError("sourceErr", "Please enter details");
+} else{
+  var regex = /^[a-zA-Z\s]+$/;
+  if(regex.test(source) === false){
+    printError("sourceErr", "no special characters");
+ }
+}
+
+if(sourceErr == true){
+  return false;
+}else{
+  var dataPreview = "you enetered: \n"  + name + "\n";
+
+alert(dataPreview);
+}
+};
+
+  </script>
+</head>
+<body>
+  <h2 align="center">Everlytics</h2>
+  <form name="myform" action="index.html" onsubmit="return validateForm()" method="post">
+  <table align="center">
+    <tr>
+      <td>Select your source:</td><td><input type="text" name="source" required></td>
+    </tr>
+    <tr>
+      <td>Provide a name for pipeline:</td><td><input type="text" name="pipeline" required="" ></td>
+    </tr>
+    <tr>
+      <td>GCS project name:</td><td><input type="text" name="proname" required></td>
+    </tr>
+    <tr>
+      <td>Gcs bucket name:</td><td><input type="text" name="bucname" required></td>
+    </tr>
+    <tr>
+      <td>Input Cloud Storage File(s):</td><td><input type="text" name="fileloc" required></td>
+    </tr>
+    <tr>
+      <td>GCS credentials:</td><td><input type="text" name="cred" required></td>
+    </tr>
+    <tr>
+      <td>Run Every:</td><td><input type="text" name="time" required></td>
+    </tr>
+    <tr>
+      <td></td>
+       <td align="left"><input type="submit" value="Create">
+         <input type="reset" value="Cancel"></td>
+    </tr>
+  </table>
+  </form>
+  </body>
+  </html>
+      �����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
